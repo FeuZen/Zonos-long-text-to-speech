@@ -9,7 +9,7 @@ The user can provide a text, as long as they want, with emotion tags (e.g., *hap
 - Zonos-v0.1-hybrid running on gradio (or Zonos-v0.1-transformer but you won't have input denoising)
 - os, shutil, gradio_client and pydub libraries installed
 - A text to transcribe
-- (A reference audio for voice cloning)
+- A reference audio for voice cloning
 
 ## How to use it
 For now, edit config.py as you wish and run : ```uv run .\main.py```

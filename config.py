@@ -9,6 +9,7 @@ text_path = './test.txt' # Path to text file, if you want to use a long text fil
 
 language = "en-gb" # Language code, choose between 'en-gb', 'en-us', 'fr-fr'
 audio_output_dir = "./audio_out" # Directory to save the generated audio file, will be created if it doesn't exist
+audio_output_name = "final_output" # Name of the final audio output file, without extension (will be saved as .mp3)
 
 speaker_audio = './reference.mp3' # Path to reference audio file
 speaker_noised = True # Whether to use the denoiser on the reference audio (set this to true if your audio has background noise/echo, only works with the hybrid model)

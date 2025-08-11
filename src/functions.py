@@ -1,7 +1,7 @@
 import os
 import shutil
 import config as cfg
-from pydub import AudioSegment
+from pydub import AudioSegment # type: ignore
 
 # Function to save the audio output
 def copy_audio_file(temp_path, destination_dir="./audio_out"):

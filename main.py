@@ -17,4 +17,4 @@ for line in content:
 
 final_audio = fn.cut_audio(final_audio, prefix_audio_duration) # Remove the prefix audio from the final output
 
-fn.save_audio(final_audio, f"{cfg.audio_output_dir}/final_output.mp3", format="mp3")
+fn.save_audio(final_audio, f"{cfg.audio_output_dir}/{cfg.audio_output_name}.mp3", format="mp3")
