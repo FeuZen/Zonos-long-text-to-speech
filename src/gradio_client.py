@@ -3,7 +3,7 @@ import config as cfg
 
 client = Client(cfg.client_url)
 
-def inference(text=cfg.text,
+def inference(text=f"{cfg.prefix_text} {cfg.text}",
 				  model=cfg.model,
 				  language=cfg.language,
 				  speaker_audio=cfg.speaker_audio,

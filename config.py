@@ -1,11 +1,18 @@
 # Basic parameters
 model = 'hybrid' # choose between 'hybrid' and 'transformer'
-text = "I'm gonna have cupcakes tonight. And you Vi ? Will you get some too ?" # Text to synthesize, don't forget the prefix text if you're using prefix audio
+
+prefix_audio = './neutral.wav' # Path to prefix audio file
+prefix_text = "Prefix text" # The transcription of the prefix audio
+text = "" # Text to synthesize, don't forget the prefix text if you're using prefix audio
+text_path = './test.txt' # Path to text file, if you want to use a long text file instead of a limited string
+# Use the text variable only for testing purposes, otherwise put your text in a .txt file as it will use chunking (line by line so put only one or two sentences per line)
+
 language = "en-gb" # Language code, choose between 'en-gb', 'en-us', 'fr-fr'
+audio_output_dir = "./audio_out" # Directory to save the generated audio file, will be created if it doesn't exist
 
 speaker_audio = './reference.mp3' # Path to reference audio file
 speaker_noised = True # Whether to use the denoiser on the reference audio (set this to true if your audio has background noise/echo, only works with the hybrid model)
-prefix_audio = './audio.wav' # Path to prefix audio file
+
 
 # Emotion parameters, values between 0 and 1, don't forget to remove "emotion" from the unconditional keys if you want to use emotions
 Happiness = 1
