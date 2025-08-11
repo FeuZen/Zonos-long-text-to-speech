@@ -12,4 +12,4 @@ The user can provide a text, as long as they want, with emotion tags (e.g., *hap
 - (A reference audio for voice cloning)
 
 ## How to use it
-For now, edit main.py as you wish and run : ```uv run .\main.py```
+For now, edit config.py as you wish and run : ```uv run .\main.py```
