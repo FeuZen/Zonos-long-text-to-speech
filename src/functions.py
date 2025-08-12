@@ -1,5 +1,4 @@
-import os
-import shutil
+import os, shutil
 import config as cfg
 from pydub import AudioSegment # type: ignore
 
@@ -14,14 +13,20 @@ def copy_audio_file(temp_path, destination_dir="./audio_out"):
 
 # Function to read text from a file
 def read_text_file(file_path=cfg.text_path):
-   with open(file_path, 'r', encoding="utf-8") as file:
+    with open(file_path, 'r', encoding="utf-8") as file:
        content = file.readlines()
-   file.close()
-   line_number = 0
-   for line in content:
-       content[line_number] = line.strip("\n")
-       line_number += 1
-   return content
+    file.close()
+    content = [line.strip() for line in content if line.strip()]
+    return content
+
+
+# Time converter
+def format_time(seconds):
+    """Convert seconds to HH:MM:SS format"""
+    hours = int(seconds // 3600)
+    minutes = int((seconds % 3600) // 60)
+    secs = int(seconds % 60)
+    return f"{hours:02d}:{minutes:02d}:{secs:02d}"
 
 
 # Audio manipulation functions
@@ -39,9 +44,9 @@ def append_audio(audio1, audio2):
     """Append two audio segments"""
     return audio1 + audio2
 
-def save_audio(audio, output_path, format="wav"):
+def save_audio(audio, output_path, format="mp3"):
     """Save audio to file"""
-    audio.export(output_path, format=format)
+    audio.export(output_path, format=format, bitrate="320k")
 
 def get_audio_duration(audio):
     """Get audio duration in milliseconds"""

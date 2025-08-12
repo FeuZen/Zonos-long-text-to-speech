@@ -1,8 +1,8 @@
 # Zonos long text to speech
-Takes an input text and transcribes it using Zyphra's excellent [zonos-v0.1-hybrid](https://huggingface.co/Zyphra/Zonos-v0.1-hybrid) voice cloning tts model running on the gradio API.
+Takes an input text and transcribes it using Zyphra's excellent zonos-v0.1-hybrid ([HuggingFace](https://huggingface.co/Zyphra/Zonos-v0.1-hybrid), [Github](https://github.com/Zyphra/Zonos)) voice cloning tts model running on the gradio API.
 
 ## Principle 
-The user can provide a text, as long as they want, with emotion tags (e.g., *happy*, *sad*) (later), and the system will chunk it and output the corresponding speech in English.
+The user can provide a text, as long as they want, with emotion tags (e.g., *happy*, *sad*), and the system will chunk it and output the corresponding speech in English.
 
 ## Prerequisites
 - Python installed
@@ -12,8 +12,10 @@ The user can provide a text, as long as they want, with emotion tags (e.g., *hap
 - A reference audio for voice cloning
 
 ## How to use it
-For now, edit config.py as you wish and run : ```uv run .\main.py```
+Edit config.py as you wish and run : ```uv run .\main.py```<br>
+For more details, check [HOW_TO_RUN.md](./src/HOW_TO_RUN.md)
 
 ## Technical details
 The chunking system is made to adress context limitations. It uses the same prefix audio before each line of your .txt file so the voice stays clean and consistent throughout the text. (this means you need to have a prefix audio that's exactly to your liking in order to get the same vibe across the whole text) <br>
-I'll try to implement multiple prefix audios for multiple emotions later but for now I'll focus on making it work. I also want to have a batch of audio outputed from teh first line/sentence of your .txt file so you can choose the one you prefer.
+A different prefix audio can be used for each emotion tag if you want to guide the model better.<br>
+Realtime factor : ~0.56 on my RTX 4060 with the model running in WSL
