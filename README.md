@@ -18,4 +18,4 @@ For more details, check [HOW_TO_RUN.md](./src/HOW_TO_RUN.md)
 ## Technical details
 The chunking system is made to adress context limitations. It uses the same prefix audio before each line of your .txt file so the voice stays clean and consistent throughout the text. (this means you need to have a prefix audio that's exactly to your liking in order to get the same vibe across the whole text) <br>
 A different prefix audio can be used for each emotion tag if you want to guide the model better.<br>
-Realtime factor : ~0.56 on my RTX 4060 with the model running in WSL
+Realtime factor : ~0.56 on an RTX 4060 with the model running in WSL
